@@ -1,0 +1,13 @@
+
+Acre, Espirito Santo, Goias, Mato Grosso, Pará, Parana, São Paulo, Sergipe)
++ diario oficial da uniao = totalizando 20 diários
+
+Maranhão = http://www.diariooficial.ma.gov.br/public/index.xhtml
+Piaui = http://www.diariooficial.pi.gov.br
+Minas gerais = http://jornal.iof.mg.gov.br/xmlui
+Alagoas = http://www.imprensaoficialal.com.br/diario-oficial/
+Df  = http://www.dodf.df.gov.br/listar
+Paraiba = http://paraiba.pb.gov.br/diario-oficial/
+Mato grosso do Sul = http://www.spdo.ms.gov.br/diariodoe#page-1
+Tocatins = https://diariooficial.to.gov.br/busca/?por=doc&tipo-documento=&numero=
+amapá = https://sead.portal.ap.gov.br/diario_oficial

@@ -26,11 +26,7 @@ class EstadoScrapy(scrapy.Spider):
                                           callback=self.save_pdf)
     def save_pdf(self,response):
         name_file = response.meta.get('name_file')
-        path = "Diarios/"+response.meta.get('path')
-        try:
-            os.makedirs(path)
-        except:
-            pass
+        path = "DiariosAL"
         self.logger.info('Saving PDF %s', name_file)
         with open('{}/{}'.format(path,name_file), 'wb') as f:
             f.write(response.body)
