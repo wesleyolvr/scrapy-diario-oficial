@@ -3,7 +3,7 @@ from urllib.parse import urljoin
 import os
 
 class EstadoScrapy(scrapy.Spider):
-    name="diario"
+    name="PI"
     start_urls = ['http://www.diariooficial.pi.gov.br/diarios.php?dia=20190125']
     url_base='http://www.diariooficial.pi.gov.br'
 
@@ -26,7 +26,11 @@ class EstadoScrapy(scrapy.Spider):
                                           callback=self.save_pdf)
     def save_pdf(self,response):
         name_file = response.meta.get('name_file')
-        path = "DiariosAL"
+        path = "Diarios/"+response.meta.get('path')
+        try:
+            os.makedirs(path)
+        except:
+            pass
         self.logger.info('Saving PDF %s', name_file)
         with open('{}/{}'.format(path,name_file), 'wb') as f:
             f.write(response.body)

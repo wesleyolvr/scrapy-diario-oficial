@@ -3,7 +3,7 @@ from urllib.parse import urljoin
 import os
 
 class EstadoScrapy(scrapy.Spider):
-    name="diario"
+    name="Alagoas"
     start_urls = ['http://www.imprensaoficialal.com.br/diario-oficial/']
     url_base='http://www.diariooficial.pi.gov.br'
 
