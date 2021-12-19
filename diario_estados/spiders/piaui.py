@@ -2,7 +2,7 @@ import scrapy
 from urllib.parse import urljoin
 import os
 
-class EstadoScrapy(scrapy.Spider):
+class PiauiScrapy(scrapy.Spider):
     name="PI"
     start_urls = ['http://www.diariooficial.pi.gov.br/diarios.php?dia=20190125']
     url_base='http://www.diariooficial.pi.gov.br'
