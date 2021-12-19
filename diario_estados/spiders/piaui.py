@@ -6,6 +6,10 @@ class EstadoScrapy(scrapy.Spider):
     name="PI"
     start_urls = ['http://www.diariooficial.pi.gov.br/diarios.php?dia=20190125']
     url_base='http://www.diariooficial.pi.gov.br'
+    
+    def get_path(name):
+        path_name = name.split(' ')[-1].split('.')[-1]
+        return path_name
 
     def parse(self,response):
         urls = response.xpath('//table[@width="350px"]/tr[2]//a[@class="texto2"]//@href').extract()
@@ -18,7 +22,7 @@ class EstadoScrapy(scrapy.Spider):
 
     def download_pdfs(self,response):
         name_file = response.xpath('//td[@class="titulo"]//text()').extract_first().strip()
-        path= name_file.split(' ')[-1].split('.')[-1]
+        path= self.get_path(name_file)
         url_pdf = response.xpath('//span[@class="texto_diario2"]//@href').extract()
         for url in url_pdf:
             yield scrapy.Request(url=url, meta={'name_file':name_file,
