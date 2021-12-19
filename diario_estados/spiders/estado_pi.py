@@ -8,7 +8,7 @@ class EstadoScrapy(scrapy.Spider):
     url_base='http://www.diariooficial.pi.gov.br'
 
     def parse(self,response):
-        urls = response.xpath('//table[@width="350px"]/tr[2]//a[@class="texto2"]//@href').extract()
+        urls = response.xpath('//a[@class="texto2"]/@href').extract()
         for url in urls:
             yield scrapy.Request(url=urljoin(self.url_base,url),callback=self.download_pdfs)
 
